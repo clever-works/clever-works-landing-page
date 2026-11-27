@@ -1,74 +1,34 @@
-import { ArrowDownRight, ArrowRight, ArrowUpRight, Asterisk, Braces, Code2, Layers3, MoveUpRight, Palette, ScanLine, Smartphone, Sparkles, Workflow } from "lucide-react";
-import Image from "next/image";
-import { FAQChatbot, FloatingContactActions, Header, InquiryForm, ScrollCue } from "@/components/site-interactions";
-
-const services = [
-  { n: "01", icon: Code2, title: "Website development", text: "Fast, thoughtful websites that make a strong first impression—and turn the right visitors into customers.", tags: "NEXT.JS · REACT · TYPESCRIPT" },
-  { n: "02", icon: Smartphone, title: "Mobile app development", text: "Useful, intuitive mobile experiences that help your business stay close to its customers.", tags: "ANDROID · MOBILE EXPERIENCES" },
-  { n: "03", icon: Palette, title: "UI/UX design", text: "Clear, considered interfaces that feel natural to use and bring your product’s best ideas forward.", tags: "RESEARCH · PROTOTYPING · DESIGN" },
-  { n: "04", icon: Layers3, title: "E-commerce development", text: "A smoother path from discovery to checkout, built to support the way your business sells.", tags: "STOREFRONTS · CHECKOUT · GROWTH" },
-  { n: "05", icon: Workflow, title: "Custom web applications", text: "Purpose-built tools that bring your workflows together and solve the problems off-the-shelf software can’t.", tags: "PRODUCT · PLATFORM · INTEGRATION" },
-  { n: "06", icon: ScanLine, title: "Redesign & maintenance", text: "Make an existing website faster, clearer, easier to use, and ready for what comes next.", tags: "OPTIMIZATION · SUPPORT · CARE" },
-];
-
-const steps = [
-  { n: "01", title: "Discover", text: "We listen first. Together, we get clear on your business, audience, goals, and the right problem to solve." },
-  { n: "02", title: "Design", text: "We turn your goals into an intuitive experience, then share a direction you can see, shape, and feel good about." },
-  { n: "03", title: "Develop", text: "We build with care, keep you in the loop, and refine the details that make the product feel right." },
-  { n: "04", title: "Launch & support", text: "We test, launch, and help you move forward with ongoing support when you need it." },
-];
+import { FAQChatbot } from "@/components/interactions/faq-chatbot";
+import { FloatingContactActions } from "@/components/interactions/floating-contact-actions";
+import { Header } from "@/components/interactions/header";
+import { AboutBand } from "@/components/sections/about-band";
+import { Contact } from "@/components/sections/contact";
+import { Cta } from "@/components/sections/cta";
+import { Footer } from "@/components/sections/footer";
+import { Hero } from "@/components/sections/hero";
+import { IntroStrip } from "@/components/sections/intro-strip";
+import { Process } from "@/components/sections/process";
+import { Services } from "@/components/sections/services";
+import { Tech } from "@/components/sections/tech";
+import { Why } from "@/components/sections/why";
+import { Work } from "@/components/sections/work";
 
 export default function Home() {
   return <>
     <Header />
     <main>
-      <section className="hero" id="home">
-        <div className="hero-noise" aria-hidden="true" /><div className="hero-orb orb-one" aria-hidden="true" /><div className="hero-orb orb-two" aria-hidden="true" />
-        <div className="hero-blessing"><p className="bismillah" lang="ar" dir="rtl">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p><p className="translation">In the name of Allah, the Most Gracious, the Most Merciful</p></div>
-        <div className="hero-content">
-          <div className="hero-eyebrow"><span className="eyebrow-line" /> A DIGITAL STUDIO FOR WHAT’S NEXT</div>
-          <h1>Turning your ideas<br />into <span className="gradient-text">digital<br className="mobile-break" /> excellence.</span></h1>
-          <p className="hero-copy">We design and develop thoughtful websites, mobile apps, and digital experiences that help businesses move forward.</p>
-          <div className="hero-actions"><a className="button button-primary" href="#contact">Let’s build your project <ArrowUpRight size={17} /></a><a className="button button-quiet" href="#work">Explore our work <ArrowDownRight size={17} /></a></div>
-          <p className="hero-motto"><span>CREATIVE THINKING</span><i /> <span>SMART TECHNOLOGY</span><i /> <span>MEASURABLE IMPACT</span></p>
-        </div>
-        <div className="hero-visual" aria-label="Illustration of a digital product taking shape">
-          <div className="visual-grid" />
-          <div className="orbit orbit-a" /><div className="orbit orbit-b" />
-          <div className="float-chip chip-code"><span className="chip-icon"><Braces size={16} /></span><span><small>BUILT WITH INTENTION</small><b>Ideas into interface</b></span><span className="chip-live" /></div>
-          <div className="float-chip chip-speed"><span className="speed-gauge"><span>⚡</span></span><span><small>MADE TO FEEL FAST</small><b>Performance, built in</b></span></div>
-          <div className="product-window"><div className="window-bar"><span className="window-dots"><i /><i /><i /></span><span className="window-address">your-next-big-thing.com</span><span className="window-menu">···</span></div><div className="window-body"><div className="mock-nav"><span className="mock-logo"><i /> studio.</span><span className="mock-links">Work &nbsp;&nbsp; About &nbsp;&nbsp; <b>Let’s talk ↗</b></span></div><div className="mock-main"><span className="mock-kicker"><i /> YOUR NEXT CHAPTER</span><h2>Make room<br />for <em>what’s next.</em></h2><p>Good things happen when a<br />great idea meets a clear plan.</p><span className="mock-button">See what’s possible <ArrowRight size={12} /></span></div><div className="mock-decoration"><span className="deco-core"><Asterisk size={46} strokeWidth={1.3} /></span><span className="deco-ring ring-1" /><span className="deco-ring ring-2" /><span className="deco-star">✳</span></div><div className="mock-footer"><span>STRATEGY&nbsp; · &nbsp;DESIGN&nbsp; · &nbsp;BUILD</span><span>SCROLL TO EXPLORE ↓</span></div></div><div className="window-base" /></div>
-          <div className="float-chip chip-mobile"><span className="mobile-symbol"><Smartphone size={16} /></span><span><small>EVERY SCREEN</small><b>Feels like it fits</b></span></div>
-          <div className="visual-caption"><span className="caption-dot" /> A LITTLE OF WHAT WE DO</div>
-        </div>
-        <ScrollCue />
-      </section>
-
-      <section className="intro-strip" aria-label="What we do"><p>Good work starts with <span>a good question.</span></p><div className="intro-side"><span>IDEAS, MEET EXECUTION.</span><ArrowDownRight size={19} /></div></section>
-
-      <section className="section services-section" id="services">
-        <div className="section-heading" data-reveal><div><p className="section-label"><span>01</span> WHAT WE DO</p><h2>Everything you need<br />to build your <span className="gradient-text">digital future.</span></h2></div><p className="section-intro">From a first sketch to a fully launched product, we bring the right mix of design and technology to your next big idea.</p></div>
-        <div className="services-grid">{services.map(({ n, icon: Icon, title, text, tags }, index) => <article className="service-card" data-reveal key={n} style={{ "--delay": `${index * 75}ms` } as React.CSSProperties}><div className="service-top"><span className="service-icon"><Icon size={19} strokeWidth={1.5} /></span><span className="service-number">{n}</span></div><h3>{title}</h3><p>{text}</p><div className="service-bottom"><span>{tags}</span><ArrowUpRight size={16} /></div></article>)}</div>
-        <a className="inline-cta" href="#contact">Have a project in mind? <span>Let’s discuss <ArrowRight size={15} /></span></a>
-      </section>
-
-      <section className="why-section" id="about"><div className="why-inner section"><div className="why-art" data-reveal><div className="art-glow" /><div className="art-ring art-ring-one" /><div className="art-ring art-ring-two" /><div className="art-ring art-ring-three" /><div className="art-cross cross-one">✳</div><div className="art-cross cross-two">✳</div><div className="art-main"><span className="art-main-top">IDEA, IN MOTION</span><div className="art-spark"><Sparkles size={28} strokeWidth={1.2} /></div><span className="art-main-bottom">THOUGHTFULLY MADE <ArrowUpRight size={13} /></span></div><div className="art-note note-top"><span className="note-symbol">↗</span><span><small>START WITH THE WHY</small><b>Built around your goals</b></span></div><div className="art-note note-bottom"><span className="note-check">✓</span><span><small>MADE FOR REAL PEOPLE</small><b>Easy to use. Ready to grow.</b></span></div><span className="art-corner">CW / 2026</span></div><div className="why-copy" data-reveal><p className="section-label"><span>02</span> THE CLEVER WORKS DIFFERENCE</p><h2>Not just developers.<br /><span className="gradient-text">Your digital</span><br />growth partners.</h2><p>Every business is different. Your digital experience should be, too. We pair practical thinking with considered design to create work that makes sense for your people and your goals.</p><ul className="benefits"><li><span>↗</span> Made around your business, not from a template</li><li><span>↗</span> Responsive from the first screen to the smallest</li><li><span>↗</span> Thoughtful SEO and performance, built in</li><li><span>↗</span> Clear communication from first call to launch</li></ul><a className="text-link" href="#process">A little about how we work <ArrowRight size={15} /></a></div></div></section>
-
-      <section className="section work-section" id="work"><div className="section-heading" data-reveal><div><p className="section-label"><span>03</span> SELECTED WORK</p><h2>Great ideas.<br /><span className="gradient-text">Beautifully built.</span></h2></div><p className="section-intro">Our work building the live Vriddhi Associates website for a growing Chennai business.</p></div>
-        <div className="work-grid"><article className="work-card work-card-featured" data-reveal><a className="project-preview preview-vriddhi" href="https://vriddhi-associates.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="Visit the live Vriddhi Associates website"><div className="vriddhi-browserbar"><span className="vriddhi-browser-dots"><i /><i /><i /></span><span>vriddhi-associates.netlify.app</span><ArrowUpRight size={13} /></div><div className="vriddhi-site"><div className="vriddhi-nav"><span className="vriddhi-wordmark"><Image src="/vriddhi-logo.png" alt="Vriddhi Associates logo" width={160} height={107} /></span><span className="vriddhi-nav-items">ABOUT&nbsp;&nbsp;&nbsp; SERVICES&nbsp;&nbsp;&nbsp; WHO WE SERVE&nbsp;&nbsp;&nbsp; CONTACT</span><b>ENQUIRE ↗</b></div><div className="vriddhi-hero"><span className="vriddhi-kicker">PROPERTY SOLUTIONS · BRANDING &amp; MARKETING · MSME CONSULTING · MULTI-LEVEL PARKING</span><h3>End-to-End <em>Property<br />Solutions</em></h3><strong>Your Trusted Property Partner in Chennai</strong><p>Property solutions, branding and marketing, MSME business consulting, and multi-level car parking across Chennai and Tamil Nadu.</p><span className="vriddhi-actions"><i>Enquire Now ↗</i><i>WhatsApp Us</i></span><div className="vriddhi-note">“Vriddhi” means Growth — we protect and grow every property we manage as if it were our own.</div></div></div><span className="preview-live-badge"><i /> LIVE WEBSITE <ArrowUpRight size={13} /></span></a><div className="project-meta"><div><span className="project-type">LIVE CLIENT PROJECT / PROPERTY · BUSINESS · PARKING</span><h3>Vriddhi Associates</h3></div><a className="project-arrow" href="https://vriddhi-associates.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="Visit Vriddhi Associates website"><ArrowUpRight size={18} /></a></div><p className="concept-note">An updated Chennai-focused website bringing together property services, branding and marketing, MSME consulting, and multi-level parking solutions.</p><a className="project-live-link" href="https://vriddhi-associates.netlify.app/" target="_blank" rel="noopener noreferrer">Visit live website <ArrowUpRight size={14} /></a></article></div>
-      </section>
-
-      <section className="tech-section"><div className="tech-inner section"><div className="tech-copy" data-reveal><p className="section-label"><span>04</span> THE TOOLS ARE ONLY THE START</p><h2>Powered by the<br /><span className="gradient-text">right technology.</span></h2><p>We choose the tools that suit your project, your people, and what you want to accomplish. Good engineering should make the experience feel simple.</p></div><div className="tech-grid" data-reveal>{["React", "TypeScript", "JavaScript", "Tailwind CSS", "Node.js", "PostgreSQL", "Figma", "AWS"].map((tech, i) => <div className="tech-item" key={tech} style={{ "--delay": `${i * 55}ms` } as React.CSSProperties}><span className={`tech-symbol tech-${i}`}>{["◉", "TS", "JS", "≈", "⬡", "◉", "F", "aws"][i]}</span><span>{tech}</span><ArrowUpRight size={13} /></div>)}</div></div></section>
-
-      <section className="section process-section" id="process"><div className="section-heading" data-reveal><div><p className="section-label"><span>05</span> OUR PROCESS</p><h2>From your vision<br />to <span className="gradient-text">reality.</span></h2></div><p className="section-intro">No mystery, no disappearing act. A thoughtful process keeps us moving in the same direction—from our first conversation through launch.</p></div><div className="process-list">{steps.map((step, i) => <article className="process-step" data-reveal key={step.n} style={{ "--delay": `${i * 90}ms` } as React.CSSProperties}><span className="process-number">{step.n}</span><span className="process-marker"><i /></span><div><h3>{step.title}</h3><p>{step.text}</p></div><ArrowUpRight size={17} className="step-arrow" /></article>)}</div></section>
-
-      <section className="about-band"><div className="about-inner" data-reveal><span className="about-asterisk">✳</span><div><p className="section-label">A NOTE FROM CLEVER WORKS</p><h2>Creativity meets<br /><span className="gradient-text">technology.</span></h2><p>We believe every great business deserves a digital presence that feels like it belongs to them. Clever Works brings creative thinking, modern engineering, and a people-first perspective together to make that happen.</p></div><a href="#contact" className="round-link" aria-label="Let's create something great"><ArrowUpRight /></a></div></section>
-
-      <section className="cta-section"><div className="cta-glow" /><div className="cta-inner" data-reveal><p className="section-label"><span>✳</span> SOMETHING GOOD STARTS HERE</p><h2>Your next big idea<br /><span className="gradient-text">starts here.</span></h2><p>Tell us what you have in mind. We’ll help you find a thoughtful way to bring it to life.</p><a className="button button-primary" href="#contact">Start your project <ArrowUpRight size={17} /></a><span className="cta-footnote">A GOOD FIRST CONVERSATION. NO PRESSURE.</span></div><div className="cta-orbit orbit-c" /><div className="cta-orbit orbit-d" /></section>
-
-      <section className="contact-section section" id="contact"><div className="contact-copy" data-reveal><p className="section-label"><span>06</span> LET’S TALK</p><h2>Let’s build<br />something <span className="gradient-text">exceptional.</span></h2><p>Have an idea, a project to launch, or a website ready for a fresh start? We’d love to hear about it.</p><a className="contact-email contact-detail" href="mailto:cleverworksinfo@gmail.com">cleverworksinfo@gmail.com <ArrowUpRight size={16} /></a><a className="contact-email contact-detail" href="tel:+919566072823">9566072823 <ArrowUpRight size={16} /></a><div className="contact-aside"><span className="status-dot" /> TAKING ON SELECT PROJECTS</div></div><div className="form-panel" data-reveal><div className="form-panel-heading"><div><h3>Tell us a little about it.</h3><p>We’ll take it from there.</p></div><span className="form-mark"><ArrowDownRight size={19} /></span></div><InquiryForm /></div></section>
+      <Hero />
+      <IntroStrip />
+      <Services />
+      <Why />
+      <Work />
+      <Tech />
+      <Process />
+      <AboutBand />
+      <Cta />
+      <Contact />
     </main>
-    <footer className="site-footer"><div className="footer-main"><div className="footer-brand"><span className="footer-eyebrow">CLEVER WORKS · DIGITAL STUDIO</span><p>Building ideas.<br /><span>Creating impact.</span></p></div><nav className="footer-links footer-navigation" aria-label="Explore"><span>EXPLORE</span><a href="#services">Services</a><a href="#about">About</a><a href="#work">Our work</a><a href="#process">Process</a></nav><div className="footer-links footer-contact"><span>LET’S TALK</span><a href="#contact">Start a project <ArrowUpRight size={13} /></a><a href="mailto:cleverworksinfo@gmail.com">cleverworksinfo@gmail.com <ArrowUpRight size={13} /></a><a href="tel:+919566072823">9566072823 <ArrowUpRight size={13} /></a></div></div><div className="footer-bottom"><span>© 2026 CLEVER WORKS. ALL RIGHTS RESERVED.</span><span>BUILDING IDEAS. CREATING IMPACT.</span><a href="#home" className="footer-back-top">BACK TO TOP <MoveUpRight size={12} /></a></div></footer>
+    <Footer />
     <FAQChatbot />
     <FloatingContactActions />
   </>;
