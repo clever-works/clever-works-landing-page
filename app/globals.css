@@ -383,3 +383,27 @@ a:focus-visible,button:focus-visible,select:focus-visible{outline:2px solid #65e
   .footer-bottom,.footer-back-top{font-size:8px}
   .footer-bottom{padding-right:62px}
 }
+
+/* Section labels ("01 WHAT WE DO" etc.) were 7-10px and hard to spot while scrolling; same colours, larger and a little bolder. */
+.section-label{font-size:13px;font-weight:500;letter-spacing:.14em;gap:13px;margin-bottom:24px}
+.about-inner .section-label{font-size:12px;margin-bottom:18px}
+@media(max-width:760px){
+  .section-label{font-size:11px;gap:10px;margin-bottom:18px}
+  .about-inner .section-label{font-size:10px}
+  .section-intro,.why-copy>p:not(.section-label),.cta-inner>p:not(.section-label),.contact-copy>p:not(.section-label){font-size:14px}
+}
+/* Card and step titles plus section intros, a step up for readability. */
+.service-card h3,.project-meta h3,.process-step h3{font-size:20px}
+.section-intro{font-size:15px;max-width:390px}
+@media(max-width:760px){.service-card h3,.process-step h3,.project-meta h3{font-size:18px}.section-intro{max-width:460px}}
+/* Section labels, second pass: larger and full-contrast text (number keeps its mint accent). */
+.section-label{font-size:16px;font-weight:600;letter-spacing:.12em;color:var(--text);margin-bottom:26px}
+.about-inner .section-label{font-size:14px}
+:root[data-theme="light"] .section-label{color:#102c36}
+@media(max-width:760px){.section-label{font-size:13px;margin-bottom:20px}.about-inner .section-label{font-size:12px}}
+@media(max-width:390px){.section-label{font-size:12px;letter-spacing:.07em;gap:8px}.about-inner .section-label{font-size:11px}}
+/* FAQ chat: the panel has its own close button, so hide the floating toggle while it is open (all widths),
+   and keep the panel below the fixed header instead of covering it. */
+.faq-launcher-open{display:none}
+.faq-chat{max-height:min(590px,calc(100dvh - 87px - 96px))}
+@media(max-width:760px){.faq-chat{max-height:calc(100dvh - 75px - 80px)}}
