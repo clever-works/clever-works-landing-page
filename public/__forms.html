@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="robots" content="noindex"><title>Forms</title></head>
+<body>
+  <!-- Netlify Forms detection only. Netlify scans this static file at deploy time to register the
+       "project-inquiry" form; the real form in components/interactions/inquiry-form.tsx posts here.
+       Field names must stay in sync with that component. -->
+  <form name="project-inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+    <input type="hidden" name="form-name" value="project-inquiry">
+    <input name="bot-field">
+    <input name="name">
+    <input type="email" name="email">
+    <select name="service"><option>Website development</option></select>
+    <textarea name="project"></textarea>
+  </form>
+</body>
+</html>
